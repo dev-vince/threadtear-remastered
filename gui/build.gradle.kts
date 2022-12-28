@@ -69,7 +69,7 @@ val runGui by tasks.registering(JavaExec::class) {
     group = "Development"
     description = "Builds and starts Threadtear"
     dependsOn(fatJar)
-
+    jvmArgs = listOf("-noverify")
     workingDir = File(project.rootDir, "dist")
     workingDir.mkdir()
     main = "me.nov.threadtear.Threadtear"
